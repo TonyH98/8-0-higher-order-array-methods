@@ -30,7 +30,9 @@ function sortByRuntimeAscending(songs) {
  */
 function sortByArtistNameDescending(songs) {
   let sort = songs.sort((a , b) => {
-    return b.artist.localeCompare(a.artist)
+    if(a.artist.toLowerCase() > b.artist.toLowerCase()){
+      return -1
+    }
   })
   return sort
 }
@@ -45,7 +47,9 @@ function sortByArtistNameDescending(songs) {
  */
 function sortBySongTitleAscending(songs) {
   let sort = songs.sort((a , b) => {
-    return a.title.localeCompare(b.title)
+    if(a.title.toLowerCase() < b.title.toLowerCase()){
+      return -1
+    }
   })
   return sort
 }
